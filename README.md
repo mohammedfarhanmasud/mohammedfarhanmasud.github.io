@@ -8,4 +8,4 @@
 
 ## [World Airports Map](https://mohammedfarhanmasud.github.io/qgis2web_2019_airport_grayscale/index.html)
 
-## [Fire and Rescue Authorities (England) Boundaries Demonstrator](https://github.com/mohammedfarhanmasud/mohammedfarhanmasud.github.io/blob/master/QGIS_FRA_England_Boundaries_demo/index.html)
+## [Fire and Rescue Authorities (England) Boundaries Demonstrator](https://mohammedfarhanmasud.github.io/QGIS_FRA_England_Boundaries_demo/index.html)

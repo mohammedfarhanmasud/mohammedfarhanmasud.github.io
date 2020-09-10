@@ -10,4 +10,4 @@
 
 ## [Fire and Rescue Authorities (England) Boundaries Demonstrator](https://mohammedfarhanmasud.github.io/QGIS_FRA_England_Boundaries_demo/index.html)
 
-## [Morocco Project](https:/mohammedfarhanmasud.github.io/blob/master/Morocco-project.html)
+## [Morocco Project](https://mohammedfarhanmasud.github.io/Morocco-project.html)

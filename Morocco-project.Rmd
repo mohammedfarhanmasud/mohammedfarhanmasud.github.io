@@ -1,0 +1,166 @@
+---
+title: "Morocco Group Project Report"
+author: "Farhan"
+date: "27/08/2020"
+output: html_document
+---
+
+```{css, echo=FALSE }
+
+ h2 {
+   font-family: 'Georgia';
+ }
+
+ h3 {
+   font-family: 'Georgia';
+ }
+
+  h4 {
+   font-family: 'Georgia';
+ }
+ 
+   h5 {
+   font-family: 'Georgia';
+     font-size: 18px;
+   }
+   
+ p {
+   font-family: 'Georgia';
+   font-size: 16px;
+ }
+
+```
+
+
+# Morocco Group Project: Investigating ground water salinisation and irrigation along the River Draa, Morocco
+
+A group project by myself, Oliver Davies, Jack Field and Luke O'Driscoll.
+
+![](C:\Users\MasudW10\Documents\earth-analytics\RMarkdown\Morocco\morocco pictures\Tinghir Oasis Morocco.jpg)
+
+Contents:
+
+[1.0 Introduction](#introduction)
+
+[2.0 Methodology](#methodology)
+
+  2.1 Rational
+  
+  2.2 Procedure
+  
+[3.0 Results](#results)
+
+  3.1 Normality Tests
+  
+  3.2 Correlation tests
+  
+[4.0 Discussion](#discussion)
+
+  4.1 Results
+  
+  4.2 Evaluation of Methodology
+  
+  4.3 Impacts of Climate Change
+  
+[5.0 Recommendations](#recommendations)
+
+[6.0 Conclusion](#conclusion)
+
+[7.0 List of References](#reference-list)
+
+
+### 1.0 Introduction{#introduction}
+
+The salinisation of groundwater in the Drâa river basin is increasingly impacting local agricultural practices (Karroum et al.2017). A combination of primary salinisation from saline inflows derived from the High Atlas Mountains (Heidecke and Kuhn, 2007) and secondary salinisation from intensive irrigation constitutes a real threat to crop yields around Ouarzazate (Warner et al.2013). This threat will undoubtedly intensify in the near future with increase rates of evapotranspiration resulting from climate change.
+
+The  importance  of maintaining  non-saline groundwater  for arable  agriculture in  the Drâa River Basin warrants an investigation into the impact of irrigation on groundwater salinity, and how this mode of secondary salinisation of groundwater in the area can be  mitigated  without  compromising the  necessary  maintenance  of  crops in an arid landscape (Machado and Serralheiro,   2017).   The   investigation   detailed   herein evaluates the   relationship   between   groundwater   salinity and irrigation using Normalised Difference Vegetation Index (NDVI) values as a proxy for where irrigation may be occurring in the lower Drâa River valley.
+
+
+### 2.0 Methodology{#methodology}
+
+
+##### 2.1 Rationale
+
+Electro-conductivity measurements acquired by Warner et al. (2013)in the lower Drâa basin were  used  to  analyse groundwater  salinity. The  data  collected  by  Warner et al.(2013) employed a robust sampling strategy and was chosen for its representative depiction of salinity levels in  the  region,  constituting  98  samples  in  6  oases (see Appendix A for the raw data).
+
+Where  irrigation  was  exactly  taking  place  in  the Drâa basin  could  not  be  asserted directly due to inaccessibility and a subsequent lack of in-field observations. Instead, higher NDVI values were presumed as proxies for where more intensive irrigation and subsequent  secondary  salinisation was  occurring  (more  irrigation  results  in  higher plant abundance and health; Zheng et al.2015), thus high NDVI values were predicted to correlate with higher levels of groundwater salinity.
+
+##### 2.2 Procedure
+
+Satellite images of the Drâa River basin from Landsat 8 were downloaded using the USGS EarthExplorer website (USGS, 2020). The NDVI of these two images was then calculated in ArcGIS 10.5.The exact GPS coordinates of the sampling points chosen by Warner et al. (2013) were not recorded and were instead plotted on a map by the researchers.  Using  this  map,  the  GPS  coordinates  of  the  sample points could be inputted  into  the  ArcGIS  program  manually.  To  ensure  the  accuracy  of  these coordinates,   the   map   from   the   journal   article   was   georeferenced   using   the “Georeferencer” plugin in QGIS 3.8, allowing a map  of  the Drâa River  basin  to  be overlain more accurately. The coordinates were saved into a CSV file and imported into ArcGIS; the NDVI values at the general position in which groundwater salinity was measured could then be extracted using the “Extract values to points” tool in the Spatial Analyst toolbox.
+
+Correlation was used to determine the relationship between the groundwater salinity and NDVI values. Checks to assess to normality of the data revealed a non-normal distribution,  preventing  the  use  of  Pearson’s  correlation coefficient.   Instead, Spearman’s rank correlation was  chosen for  this  study due  to its  effectiveness  in measuring bivariate association in non-parametric data.This statistical analysis was performed in Microsoft Excel.Figure 1 summarises the methodology.
+
+![Fig.1: Methodology Framework ](C:\Users\MasudW10\Documents\earth-analytics\RMarkdown\Morocco\morocco pictures\FIG1-METHODOLOGY-FW.png)
+
+### 3.0 Results{#results}
+
+Normality  checks  were performed using frequency histograms  (Figure 2).  Both  the conductivity data and the NDVI values for both conductivity and NDVI exhibited strong positive  newness,  indicating  that the  data was  not  normally  distributed.Therefore, Spearman’s rank correlation was used to assess the possible relationship between groundwater  salinity(electro-conductivity  readings)and  vegetation health  (NDVI) in order to achieve objective 1of this study.
+  
+![Fig. 2: Histograms indicating positive or right skewness in the electroconductivity
+data (a) and NDVI data (b) ](C:\Users\MasudW10\Documents\earth-analytics\RMarkdown\Morocco\morocco pictures\FIG2-Histograms.png)
+
+
+##### 3.2 Correlation Output
+
+Spearman’s rank non-parametric correlation produced a value of 0.34, suggesting a ‘weak’ (Akoglu, 2018) albeit positive relationship between the groundwater salinity and NDVI values. Figure 3 highlights the weak relationship between NDVI and EC with a large cluster below2,500mS/cm and0.1 NDVI.
+
+![Fig. 3 : NDVI values vs Electro-conductivity measurements. ](C:\Users\MasudW10\Documents\earth-analytics\RMarkdown\Morocco\morocco pictures\FIG3-NDVI-VS-EC.png)
+
+### 4.0 Discussion{#discussion}
+
+##### 4.1 Results
+
+The  weak  relationship  determined  by  the  correlation  between  groundwater  salinity electro-conductivity measurements and NDVI values contradicts the presumption that irrigation is significantly increasing groundwater salinity in the lower Drâa River basin.This  is  particularly  evident  at sample  point  45 (Figure 4),  which lies  within  a high NDVI area but has a low conductivity value of 450mS/cm.This is unanticipated, considering  that  flows  in  the  downstream  Drâa  River  are  used  almost  entirely  for irrigation (Warner et al.2013). Ultimately, the weak Spearman’s rank coefficient may suggest that factors other than irrigation are determining groundwater salinity.
+
+Boukhariet al.(2014) suggests that elevated groundwater salinity levels in the lower Drâa oases may be due to modes of primary salinisation, attributed to salts derived from the geology of the High Atlas mountains becoming suspended in flow via fluvial erosion  and  eventually  accumulating  in  the  unsaturated  zones  of  the Drâa oases’ basins downstream. The large prevalence of sodium chloride derived from the High Atlas   mountains   observed in   the   Draa   Valley by   both   Warner et   al.(2013) and Boukhari et  al.(2014)  certainly  seems  to  support  this  assertion.Furthermore, mining in the mountain range is likely accelerating this mode of primary salinisation (Brahim, 2015), disrupting the geology and releasing minerals, e.g. Ca2+, Mg2+, Na+, Cl, into nearby watercourses, which eventually accumulate downstream.
+
+Alternatively, Warner et al.(2013) advocates that evaporation is the chief mechanism controlling  groundwater  salinity  in  the Drâa oases,  observing  a  decrease  in  salinity with  groundwater  depth.However,  some  sample  points  indicated  high  groundwater salinity  levels  corresponding  with  higher  NDVI  values,  e.g.  sample  point  86  had  a reading  of 8730mS/cm  with  a  high  NDVI,  indicating  that  irrigation  is  increasing groundwater salinity to a certain extent. Certainly, irrigation is likely exacerbating the aforementioned  modes  of  groundwater  salinisation.  Widespread  irrigation  and  the recycling  of  pumped  water  from  the Mansour  Eddahbi  reservoir,  made  saline  from upstream inflows, has led to the dissolution of salts entrained in the Drâa River flow, allowing  the  salts  to  accumulate  in  groundwater  basins  dowsntream  (Warner et  al.2013).  Furthermore,  as  water  from  the Drâa Rivers  brought  to  the  surface  via irrigation, it evaporates, allowing salts initially in solution to precipitate and leach into groundwater  basins  through  permeable  soils  via  irrigation  return  flow  (Foster et  al. 2018). Thus, when the results of the Spearman’s Rank correlation are considered alongside the literature, it can be asserted that increases in groundwater salinity in the Drâa oases  can  be  attributed  to  primary  modes  of  salinisation,  exacerbated  by irrigation practices. 
+
+(insert fig 4)
+
+![Fig. 4: NDVI map of the Drâa River with sample points.](C:\Users\MasudW10\Documents\earth-analytics\RMarkdown\Morocco\morocco pictures\fig4-ndvi.png)
+
+##### 4.2 Evaluation of Methodology
+
+The main limitation of this methodology is that high NDVI readings do not necessarily indicate  exactly  where  irrigation  is  occurring.  It  is  therefore  difficult  to  determine whether   the   weak   correlation   between   NDVI   values   and   groundwater   salinity measurements is eluding to other factors determining groundwater salinity, or whether NDVI values are not reflective of where irrigation is actually occurring. Additionally, the samples  were  taken  during  2013  and  therefore  the  satellite  image  used  had  to  be captured  at  around  the  same  time;  vegetation  health  and  groundwater  salinity  may well  have  altered  in  the  past  seven  years.  The  map  provided  by  the  researches denoted the general area of the sample points, and thus the exact GPS coordinates were assumed.
+
+However, due to the prevention of in-field observations, NDVI values served as the most  suitable  proxy  for  where  irrigation  may  have  been  occurring,  whilst  care  was taken  to  ensure  the best  possible accuracy  of  the  GPS  coordinates for the  sample points. Furthermore, when the results of the correlation are assessed in the context of the surrounding literature,  it  can  be  confidently  asserted  that  levels of groundwater salinity in the lower Drâa basin are controlled by several, interrelated factors, rather than just irrigation alone.
+
+##### 4.3 Impact of Climate Change
+
+The IPCC’s fifth assessment report assumes  a  rise  in temperature of 2oC  by  2080 under a medium emission scenario (IPCC, 2014). Additionally, although higher levels of  precipitation are  predicted  in southern  Morocco,the  country is  expected  to experience  an  overall reduction  in  precipitation  and an  increase  in  seasonal  spatial dependency on  the  rain  that  falls (Barkhordarian et  al,  2013). Indeed,  overall precipitation  in  North  Africa is set  to  reduce  between  10-20%by  2050 (Schilling et al.2012).
+
+The IPCC report also suggests that the predicted changes under a medium emissions scenario will   likely   exacerbate   existing stress factors on   water   availability and groundwater  salinisation,  principally  due  to  increased  rates  of  evapotranspiration.Increases in groundwater salinity as a result of increased evaporation rates and the subsequent dissolution of salts, as predicted by the World Bank (2014),in a country that  fundamentally  relies  upon  good  quality  irrigation  waterfor  agriculture will  likely have drastic impacts unless mitigation methods are adopted, particularly in the lower Drâa basin.The situation is likely to be further exacerbated by a lack of groundwater recharge due to reduced precipitation rates (Schillinget al.2012).Food security is will probably befurther strained by increasingly common extreme weather events such as droughts and heat waves. A decline incereal crops yields due to either exceedance of heat tolerance or lack of water supply is also predicted(IPCC, 2014).
+
+### 5.0 Recommendations{#recommendations}
+
+Such  is  the  sensitivity  of  Morocco  to  climate  change, coupled  with  its  economic dependence  of  the  agricultural  industry  and  limited capacity  to  adopt  change, Schillinget al.(2012) named Morocco as one of the most sensitive countries to climate change   in   North   Africa. Thus,   mitigation   efforts   must   be effective without compromising agricultural production.
+
+Assurance  of  crop  yields  and  reductions  in  groundwater  salinity  may  be  achieved through     the     implementation     of     drip-irrigation     techniques.     Drip-irrigation uses pressurised irrigation  technology  to  supply adequate amounts  of  water  directly to  the  roots  of  the  plants  through  plastic  tubes,  rather  than  spraying  water  over  a general area typical of traditional irrigation systems. Drip-irrigation can increase crop yields with less water, and will not cause the foliar accumulation of salts that is typically observed in traditional irrigation systems (Benouniche et al.2014). Furthermore, drip irrigation is capable of maintaining constant soil water and salinity levels, controlling the  rates  of  evapotranspiration  and  leaching  of  salts  into  the  groundwater  zone (Berrada, 2009). Drip-irrigation has been proven just as effective on small scale farms as it is on larger agricultural areas, so could benefit both subsistence and commercial farmers alike (Benouniche et al.2014). The efficiency of drip-irrigation is highlighted in the Tadla-Azilal region of central Morocco, where it has resulted in a 61% reduction in the volume of groundwater consumed whilst maintaining crop yields (WorldBank, 2020).
+
+However, introducing drip-irrigation schemes can prove expensive; implementation of drip-irrigation     has     cost     on     average $5,737/ha to implement in Tadla, central Morocco (Berrada 2009).  Introducing a  small  tax  to  commercial  farmers  and large   companies   for   drip   irrigation implementation   should   be marketed   as   an ‘investment’ into new sustainable irrigation that will both reduce the over-exploitation of water within the Drâa River basin and increase yields. However, caution should be taken  when  asking  for  taxes  off  smaller  or  subsistence  farmers  who  do  not  earn enough money for the government to tax. Often the smaller farmers are illiterate which reduces  their  chances  of  getting  a  loan  to  pay  taxes (Berrada 2009).  Instead,  the irrigation should be heavily or completely subsidised for subsistence and smaller scale farming   operations to   ensure   they   still   have   access   to   renewable   irrigation techniques.
+
+Moroccan agriculture is currently dominated by low value grain for cereal production (Houet al. 2015).An introduction of plants that have a high-market value but require limited  amounts  of  water  for  growth,  e.g.  palms,  shrubs  and  climbers would  reduce water use within the Draa basin whilst also increasing revenue for farmers. Morocco is situated within a strong geographic position to export around the world with access to Europe, the east coast of the US, Russia and the rest of Africa. Exporting fruit and vegetables to  these  nations accounted  for  just  18%  of  the  country's  total  exports  in 2015 (Houet al.2015).Increasing the growth and exportation of fruits, vegetables and horticultural plants would increase revenue for farmers; increased earnings can allow the modernisation of agriculture and the development of drip-irrigation and other water saving strategies in the lower Drâa basin.
+
+On  a  local  scale,  the  use  of  illegal  wells  is  a  key  issue  for authorities in  the Drâa basin. Of  the  17,000  wells  in  the  region,  only  2,000 have  been sanctioned  by  the government and water removal monitored on a regularly basis (Molleet al.2019). To reduce the problem, the government should focus on identifying the locations of these illegal wells and ensure their destruction. To prevent future usage of illegal wells, there should be a focus on educating farmers so they understand the implications of their usage. Education alongside subsidies, introduction of drip-irrigation and new plants as part of a holistic approach should create a sustainable future of water use in the Drâa basin, even in the context of a changing climate.
+
+### 6.0 Conclusion{#conclusion}
+
+A wide range of factors act in conjunction to determine groundwater salinisation in the oases  of  the  lower Drâa River  basin.  In  an  area  that  is  so  heavily  dependent on groundwater  of  sufficient  quality  and  quantity  for arable  agriculture, increases  in groundwater  salinity  have the  potential  to generate drastic  ramifications.  With  a knowledge  of  the  factors  driving  groundwater  salinisation,  efforts  can  be  taken  to combat and mitigate them, to ensure the sustainability of groundwater use and arable practices along the Drâa River valley in a changing climate.
+
+### 7.0 Reference List{#reference-list}
+
+
+
+```{r, echo=FALSE}
+
+
+#  add reference list
+# 
+#  add figure captions - done
+# 
+#  justify text
+#
+```
+
